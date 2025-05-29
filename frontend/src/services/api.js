@@ -1,7 +1,7 @@
 import axios from "axios";
 import TokenService from "./tokenService";
 
-const API = axios.create({ baseURL: "https://poker-xdhq.onrender.com/api/v1/auth/" });
+const API = axios.create({ baseURL: "https://poker-xdhq.onrender.com/api/v1/" });
 
 API.interceptors.request.use(
   (config) => {
@@ -19,7 +19,7 @@ API.interceptors.response.use(
     if (err.response && err.response.status === 401 && !originalConfig._retry) {
       originalConfig._retry = true;
       try {
-        const rs = await axios.post("https://poker-xdhq.onrender.com/api/v1/auth/refresh/", {
+        const rs = await axios.post("https://poker-xdhq.onrender.com/api/v1/refresh/", {
           refresh: TokenService.getLocalRefreshToken(),
         });
         TokenService.updateLocalAccessToken(rs.data.access);
