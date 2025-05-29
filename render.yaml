@@ -7,9 +7,15 @@ services:
       pip install -r requirements.txt
       npm install --prefix frontend
       npm run build --prefix frontend
+      cp -r frontend/build/* app/static/
+      cp frontend/build/index.html app/templates/
     startCommand: gunicorn app.wsgi:application --bind 0.0.0.0:$PORT
     envVars:
       - key: DJANGO_SETTINGS_MODULE
         value: app.settings
       - key: PYTHON_VERSION
         value: 3.10
+      - key: CORS_ALLOW_ALL_ORIGINS
+        value: true
+      - key: CSRF_TRUSTED_ORIGINS
+        value: https://poker-xdhq.onrender.com
