@@ -10,7 +10,7 @@
 * ♟ Play **against AI bot**
 * 👥 Real-time rooms for **multiplayer poker** *(WIP)*
 * ✨ Animated card dealing and sound effects
-* 🌐 Deployed to Render: [Live Demo]([(https://poker-4gmu.onrender.com/)])
+* 🌐 Deployed to Render: [Live Demo]([https://poker-4gmu.onrender.com/])
 
 ---
 
