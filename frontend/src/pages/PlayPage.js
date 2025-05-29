@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import API from '../services/api';
+import TokenService from '../services/tokenService';
 import './PlayPage.css';
 
 function PlayPage() {
@@ -8,6 +9,13 @@ function PlayPage() {
   const [botCards, setBotCards] = useState([]);
   const [result, setResult] = useState(null);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = TokenService.getLocalAccessToken();
+    if (!token) {
+      navigate('/login');
+    }
+  }, [navigate]);
 
   const playSound = (filename) => {
     const audio = new Audio(`/sounds/${filename}`);
@@ -55,11 +63,21 @@ function PlayPage() {
     }
   };
 
+  const handleLogout = () => {
+    TokenService.removeTokens();
+    navigate('/login');
+  };
+
   return (
     <div className="play-container">
-      <button className="back-btn-left" onClick={() => navigate('/welcome')}>← Назад</button>
+      <div className="top-bar">
+        <button className="back-btn-left" onClick={() => navigate('/welcome')}>← Назад</button>
+        <button className="logout-btn-right" onClick={handleLogout}>Выйти</button>
+      </div>
+
       <h2>Покер против бота</h2>
       <button className="play-btn" onClick={handlePlay}>Играть</button>
+
       <div className="cards-section">
         <div>
           <h3>Ваши карты</h3>
@@ -78,6 +96,7 @@ function PlayPage() {
           </div>
         </div>
       </div>
+
       {result && (
         <div className="result-text">
           <p><strong>Вы:</strong> {result.player}</p>
