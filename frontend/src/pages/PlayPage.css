@@ -1,0 +1,116 @@
+.play-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.play-btn {
+  padding: 12px 24px;
+  font-size: 18px;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.play-btn:hover {
+  background-color: darkgreen;
+}
+
+.cards-section {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.card-container {
+  display: flex;
+  gap: 10px;
+}
+
+.card-container img {
+  width: 80px;
+  height: auto;
+}
+
+.result-text {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+@keyframes deal {
+  0% {
+    transform: translateY(-50px) scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.card-deal {
+  animation: deal 0.4s ease-out forwards;
+}
+  .welcome-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.welcome-buttons .play-btn {
+  padding: 14px 28px;
+  font-size: 18px;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 250px;
+}
+
+.welcome-buttons .play-btn:hover {
+  background-color: darkgreen;
+}
+
+.welcome-subtitle {
+  font-size: 18px;
+  color: #444;
+  margin-top: 10px;
+  text-align: center;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.back-btn {
+  margin-bottom: 15px;
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: #ccc;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.back-btn:hover {
+  background-color: #aaa;
+}
+.back-btn-left {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 8px 16px;
+  background-color: #e0e0e0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.back-btn-left:hover {
+  background-color: #cfcfcf;
+}

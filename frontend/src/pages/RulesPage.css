@@ -1,0 +1,25 @@
+/* src/pages/RulesPage.css */
+.rules-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fafafa;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.rules-container ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.back-btn-left {
+  margin-bottom: 20px;
+  padding: 8px 16px;
+  background-color: #ddd;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
